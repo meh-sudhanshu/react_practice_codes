@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 function App() {
   const nameRef = useRef()
   const style={
@@ -13,7 +13,18 @@ function App() {
   const clickHandler =(e)=>{
     e.preventDefault()
     console.log(nameRef.current.value)
+    nameRef.current.value=""
   }
+  useEffect(()=>{
+      // const identifier = setTimeout(()=>{
+      //   console.log("timer started using useEffect which will run after every 5 sec")
+      //   return ()=>{
+      //     clearTimeout(identifier)
+      //     console.log("timeout cleared")
+      //   }
+      // },500)
+      console.log("use effect ran without any dependencies")
+  },[])
   return (
     <div className="App" >
         <form style={style}>
