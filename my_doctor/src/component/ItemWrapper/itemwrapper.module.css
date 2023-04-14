@@ -1,0 +1,40 @@
+
+
+
+.item{
+    width: 60vw;
+    height: 12vh;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px;
+    padding:30px;
+    position: relative;
+}
+
+.align{
+    width: 26%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.appoint_btn{
+    padding: 10px;
+    background-color: #245953;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.message_btn{
+    padding: 10px;
+    background-color: #3F497F;
+    color: #fff;
+    border: none;
+    margin-left: 30px;
+    cursor: pointer;
+}

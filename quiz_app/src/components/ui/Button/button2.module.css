@@ -1,0 +1,14 @@
+
+
+.option{
+    width: 140px;
+    padding: 10px;
+    background-color: #ffba93;
+    color: #1e1e1e;
+    border: none;
+    cursor: pointer;
+}
+
+.selected{
+    border: 5px solid green;
+}

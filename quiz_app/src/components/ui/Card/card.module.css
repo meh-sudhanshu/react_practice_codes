@@ -1,0 +1,29 @@
+
+
+
+.card{
+    width: 450px;
+    height: 150px;
+    background-color: #9f5f80;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px;
+}
+
+.que{
+    color: white;
+    font-family: sans-serif;
+}
+
+
+.ans_ctn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
