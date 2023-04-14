@@ -4,6 +4,7 @@ import classes from './appointment.module.css'
 import Navbar from "../../component/Navbar/Navbar";
 import ItemWrapper from "../../component/ItemWrapper/ItemWrapper";
 import Overlay from "../../component/Overlay/Overlay";
+import MessageBox from "../../component/MessageBox/MessageBox";
 
 const Appointment = ()=>{
     const doctorList =[
@@ -41,19 +42,24 @@ const Appointment = ()=>{
         }
     ]
     const [flag,setFlag] = useState(false)
+    const [mFlag,setMFlag] = useState(false)
     const [index,setIndex] = useState(0)
     const toggleFlag = (index)=>{
         setIndex(index)
         setFlag(!flag)
     }
+    const toggleMFlag =()=>{
+        setMFlag(!mFlag)
+    }
     return(
         <div className={classes.center}>
             {flag && <Overlay data={doctorList[index]}/>}
+            {mFlag && <MessageBox/>}
             <Navbar/>
             <div className={classes.bottom}>
                 {doctorList.map(item=><ItemWrapper item={item} key={
                     Math.random()
-                } toggleFlag={toggleFlag}/>)}
+                } toggleFlag={toggleFlag} toggleMFlag={toggleMFlag}/>)}
             </div>
         </div>
     )

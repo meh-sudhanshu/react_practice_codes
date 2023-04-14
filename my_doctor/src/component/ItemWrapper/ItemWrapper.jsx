@@ -10,6 +10,9 @@ const ItemWrapper = (props)=>{
     const toggleFlag = ()=>{
         props.toggleFlag(props.item.id - 1)
     }
+    const messageHandler =()=>{
+        props.toggleMFlag()
+    }
     return(
         <div className={classes.item} style={style}>
             <div className={classes.align}>
@@ -27,7 +30,7 @@ const ItemWrapper = (props)=>{
                 >Book An Appointment</button>
             </div>
             <div className={classes.align}>
-                <button className={classes.message_btn}>Message</button>
+                <button className={classes.message_btn} onClick={messageHandler}>Message</button>
             </div>
         </div>
     )
