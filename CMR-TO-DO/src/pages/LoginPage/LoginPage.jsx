@@ -12,7 +12,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { useNavigate } from 'react-router-dom';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -31,6 +31,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function LoginPage() {
+  let navigate = useNavigate()
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -38,7 +40,7 @@ export default function LoginPage() {
       username: data.get('username'),
       password: data.get('password'),
     }
-    const LOGIN_API = "http://localhost:8080/login"
+    const LOGIN_API = "http://localhost:8080/user/login"
 
     const fetchParams = {
         'method':"POST",
@@ -51,9 +53,12 @@ export default function LoginPage() {
     const returendPromise = fetch(LOGIN_API, fetchParams)
     returendPromise.then(res => res.json())
     .then(res =>{
-        console.log(res)
+        if(res.isAuthenticated === "true"){
+          localStorage.setItem("userId",res.userId)
+          navigate("/homepage",{"userId":res.userId})
+        }
     })
-    console.log(loginObject)
+    
   };
 
   return (

@@ -43,11 +43,12 @@ export default function RegisterPage() {
       dob:data.get("dob"),
       password: data.get('password'),
     };
-    const SINGUP_URL = 'http://localhost:8080/register-user'
+    const SINGUP_URL = 'http://localhost:8080/user/register-user'
     const fetchParams = {
         'method':"POST",
         "headers":{
-          'Content-Type':'application/json'
+          'Content-Type':'application/json',
+          "Access-Control-Allow-Origin":'*'
         },
         'body':JSON.stringify(userObject)
     }

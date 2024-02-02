@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MyButton from '../../atoms/MyButton'
 import MultiActionAreaCard from '../../components/MultiActionAreaCard'
 import DataGridDemo from '../../components/DataGridDemo'
@@ -6,7 +6,14 @@ import './homepage.css'
 
 
 const Homepage = (props)=>{
-    console.log(props.userId)
+    console.log(props,"props")
+    const USER_ID = (props.userId)
+    const [userData,setUserData] = React.useState(null)
+   
+
+  
+
+
     return(
        <div className="main">
             <div className="left">
