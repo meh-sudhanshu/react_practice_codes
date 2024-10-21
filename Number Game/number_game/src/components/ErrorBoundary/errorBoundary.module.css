@@ -1,0 +1,14 @@
+
+
+
+.error_boundary{
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
