@@ -1,0 +1,17 @@
+
+
+.main{
+    width: 100vw;
+    height: 100vh;
+}
+
+.data_card_ctn{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
