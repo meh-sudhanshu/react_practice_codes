@@ -1,44 +1,30 @@
 
 
+import { useState } from 'react'
 import Button from '../../components/Button/Button'
 import ItemCard from '../../components/ItemCard/ItemCard'
 import styles from './homepage.module.css'
+import AddForm from '../../components/AddForm/AddForm'
 
 
 const Homepage = ()=>{
+    const [isFormSet,setIsFormSet] = useState(false)
+    const [toDoItems,setToDoItems] = useState([])
 
-    const toDoItems = [
-        {
-            title:"Title 1",
-            dueDate:"25-10-1998",
-            desc: "Lorem ipsum, dolor sit amet consecteturn adipisicing elit. Quis voluptate maxime hic itaque voluptatem"
-        },
-        {
-            title:"Title 2",
-            dueDate:"25-10-1999",
-            desc: "Lorem ipsum, dolor sit amet consecteturn adipisicing elit. Quis voluptate maxime hic itaque voluptatem"
-        },
-        {
-            title:"Title 3",
-            dueDate:"25-10-2000",
-            desc: "Lorem ipsum, dolor sit amet consecteturn adipisicing elit. Quis voluptate maxime hic itaque voluptatem"
-        },
-        {
-            title:"Title 4",
-            dueDate:"25-10-2001",
-            desc: "Lorem ipsum, dolor sit amet consecteturn adipisicing elit. Quis voluptate maxime hic itaque voluptatem"
-        },
-        {
-            title:"Title 5",
-            dueDate:"25-10-2002",
-            desc: "Lorem ipsum, dolor sit amet consecteturn adipisicing elit. Quis voluptate maxime hic itaque voluptatem"
-        }
-    ]
-
+    const toggleFormState = ()=>{
+        setIsFormSet(!isFormSet)
+    }
+    const updateItemList = (newItem)=>{
+        setToDoItems([...toDoItems,newItem])
+        setIsFormSet(false)
+    }
 
     return(
         <div className={styles.main}>
-            <Button text="Add An Item"/>
+            {isFormSet && <AddForm updateItemList={updateItemList}/>}
+            <Button text="Add An Item" 
+                toggleFormState={toggleFormState}
+            />
             <br />
             <div className={styles.card_ctn}>
                 {
