@@ -1,0 +1,16 @@
+
+
+
+
+
+.add_form{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
